@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Loan | Capital Sense Funding</title>
+<meta name="description" content="We offer financing options in the form of business loans to help your business. These loans are available to clients throughout the United States.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a1526;
+    --bg-raised: #0d1c31;
+    --bg-card: #0f2138;
+    --line: rgba(255,255,255,0.09);
+    --text-hi: #eef3f9;
+    --text-body: #9fb0c4;
+    --text-dim: #6d7f96;
+    --blue: #5b9bd5;
+    --blue-bright: #7fb4e6;
+    --gold: #6e6350;
+    --btn-text: #071322;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text-body);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .label{
+    font-family:'Barlow Condensed',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-weight:600;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display',serif;
+    color:var(--text-hi);
+    font-weight:600;
+    line-height:1.12;
+  }
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,21,38,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 40px;max-width:1240px;margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:14px;}
+  .logo svg{width:42px;height:42px;flex-shrink:0;}
+  .logo-text{
+    font-family:'Barlow Condensed',sans-serif;
+    line-height:1.05;
+  }
+  .logo-text .line1{
+    font-size:14px;font-weight:600;letter-spacing:0.14em;color:var(--text-hi);
+    display:block;
+  }
+  .logo-text .line2{
+    font-size:20px;font-weight:700;letter-spacing:0.08em;color:#fff;
+    display:block;
+  }
+  nav.links{display:flex;align-items:center;gap:38px;}
+  nav.links a{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:15px;font-weight:600;letter-spacing:0.12em;
+    color:var(--text-body);text-transform:uppercase;
+    transition:color .2s;
+  }
+  nav.links a:hover, nav.links a.active{color:var(--blue-bright);}
+  .header-right{display:flex;align-items:center;gap:28px;}
+  .phone{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:15px;font-weight:600;letter-spacing:0.06em;color:var(--text-hi);
+  }
+  .btn-apply{
+    background:var(--blue);color:var(--btn-text);
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;letter-spacing:0.1em;font-size:14px;
+    padding:13px 26px;text-transform:uppercase;
+    transition:background .2s, transform .2s;
+    white-space:nowrap;
+  }
+  .btn-apply:hover{background:var(--blue-bright);transform:translateY(-1px);}
+  .mobile-toggle{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:110px 40px 90px;
+    background:
+      radial-gradient(ellipse 900px 500px at 75% 0%, rgba(91,155,213,0.10), transparent 60%),
+      var(--bg);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size:64px 64px;
+  }
+  .hero-inner{max-width:1240px;margin:0 auto;}
+  .eyebrow-row{
+    display:flex;align-items:center;gap:18px;margin-bottom:40px;
+    color:var(--blue-bright);
+  }
+  .eyebrow-row .rule{height:1px;flex:0 0 60px;background:var(--blue-bright);opacity:.5;}
+  .eyebrow-row span{font-size:14px;}
+  .hero h1{
+    font-size:clamp(40px,5.4vw,72px);
+    max-width:820px;margin-bottom:28px;
+  }
+  .hero h1 em{
+    font-style:italic;color:var(--blue-bright);
+  }
+  .hero p.lede{
+    max-width:640px;font-size:18px;color:var(--text-body);margin-bottom:44px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:18px;}
+  .btn-primary{
+    background:var(--blue);color:var(--btn-text);
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;letter-spacing:0.1em;font-size:15px;
+    padding:17px 34px;text-transform:uppercase;
+    transition:background .2s, transform .2s;
+  }
+  .btn-primary:hover{background:var(--blue-bright);transform:translateY(-1px);}
+  .btn-outline{
+    border:1px solid rgba(127,180,230,0.4);color:var(--blue-bright);
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;letter-spacing:0.1em;font-size:15px;
+    padding:17px 34px;text-transform:uppercase;
+    transition:border-color .2s, background .2s;
+  }
+  .btn-outline:hover{border-color:var(--blue-bright);background:rgba(91,155,213,0.08);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:100px 0;border-top:1px solid var(--line);}
+  .eyebrow{
+    color:var(--blue-bright);font-size:14px;margin-bottom:18px;display:block;
+  }
+
+  /* ---------- Split section (text + numbered list) ---------- */
+  .split{
+    display:grid;grid-template-columns:1.05fr 1fr;gap:90px;align-items:start;
+  }
+  .split h2{font-size:clamp(32px,3.4vw,46px);margin-bottom:26px;max-width:520px;}
+  .split .body-copy p{margin-bottom:20px;font-size:16.5px;max-width:520px;}
+  .body-copy strong{color:var(--text-hi);font-weight:600;}
+  blockquote{
+    margin-top:36px;padding-left:26px;border-left:2px solid var(--blue);
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:22px;color:var(--blue-bright);max-width:520px;line-height:1.4;
+  }
+  .numbered-list{border-top:1px solid var(--line);}
+  .num-item{
+    display:grid;grid-template-columns:64px 1fr;gap:22px;
+    padding:30px 0;border-bottom:1px solid var(--line);
+  }
+  .num-item .num{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:600;
+    font-size:26px;color:var(--gold);
+  }
+  .num-item h4{
+    font-family:'Barlow Condensed',sans-serif;color:var(--blue-bright);
+    font-size:17px;letter-spacing:0.1em;font-weight:700;text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .num-item p{font-size:15.5px;color:var(--text-body);}
+
+  /* ---------- Products grid ---------- */
+  .products-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:56px;gap:24px;flex-wrap:wrap;
+  }
+  .products-head h2{font-size:clamp(32px,3.6vw,50px);max-width:640px;}
+  .view-all{
+    border:1px solid rgba(255,255,255,0.18);padding:14px 26px;
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;
+    letter-spacing:0.1em;font-size:14px;color:var(--blue-bright);
+    text-transform:uppercase;white-space:nowrap;transition:border-color .2s;
+  }
+  .view-all:hover{border-color:var(--blue-bright);}
+  .product-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+    background:var(--line);
+  }
+  .product-card{
+    background:var(--bg-card);padding:38px 32px;min-height:230px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    transition:background .25s;
+  }
+  .product-card:hover{background:var(--bg-raised);}
+  .product-card .pc-top .pc-eyebrow{
+    font-size:12.5px;color:var(--gold);margin-bottom:14px;display:block;
+  }
+  .product-card h3{
+    font-size:24px;margin-bottom:14px;
+  }
+  .product-card p{font-size:14.5px;color:var(--text-body);}
+
+  /* ---------- Qualification band ---------- */
+  .qual-band{
+    background:var(--bg-raised);
+  }
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    text-align:center;padding:110px 40px;border-top:1px solid var(--line);
+    background:
+      radial-gradient(ellipse 700px 400px at 50% 100%, rgba(91,155,213,0.10), transparent 65%),
+      var(--bg);
+  }
+  .cta-band .label{color:var(--blue-bright);display:block;margin-bottom:22px;font-size:14px;}
+  .cta-band h2{font-size:clamp(30px,4vw,52px);max-width:760px;margin:0 auto 36px;}
+  .cta-band .ctas{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--line);padding:70px 40px 34px;background:var(--bg);
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px;margin-bottom:56px;
+  }
+  .footer-brand .logo{margin-bottom:18px;}
+  .footer-brand p{font-size:14.5px;max-width:320px;color:var(--text-dim);}
+  .footer-col h5{
+    font-family:'Barlow Condensed',sans-serif;color:var(--text-hi);
+    letter-spacing:0.1em;font-size:14px;text-transform:uppercase;margin-bottom:20px;
+    font-weight:700;
+  }
+  .footer-col a, .footer-col p{
+    display:block;font-size:14.5px;color:var(--text-dim);margin-bottom:12px;
+    transition:color .2s;
+  }
+  .footer-col a:hover{color:var(--blue-bright);}
+  .footer-bottom{
+    border-top:1px solid var(--line);padding-top:26px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+    font-size:13px;color:var(--text-dim);
+  }
+  .tagline-small{letter-spacing:0.1em;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .wrap,.nav,.hero-inner{padding-left:24px;padding-right:24px;}
+    nav.links{display:none;}
+    .split{grid-template-columns:1fr;gap:56px;}
+    .product-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:36px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="https://www.capitalsensefunding.com/" class="logo">
+      <img src="images/Test1.png" alt="Capital Sense Funding" style="height: 50px; margin-top: 15px;">
+    </a>
+    <nav class="links">
+      <a href="https://www.capitalsensefunding.com/">Home</a>
+      <a href="short-term-loan.html" class="active">Business Loan</a>
+      <a href="https://www.capitalsensefunding.com/accountant-cpa.html">Accountant/CPA</a>
+      <a href="merchant-outlook.html">Merchant Outlook</a>
+      <a href="https://lp.constantcontactpages.com/sl/LhbhosA">Contact</a>
+    </nav>
+    <div class="header-right">
+      <span class="phone">(267) 575-4786</span>
+      <a class="btn-apply" href="https://www.capitalsensefunding.com/apply-online.php">Apply Online</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none;padding-top:110px;">
+  <div class="hero-inner">
+    <div class="eyebrow-row">
+      <span class="rule"></span>
+      <span class="label">Capital Sense Funding Presents</span>
+    </div>
+    <h1>Strategic Capital for <em>High&#8209;Performance</em> Growth</h1>
+    <p class="lede">Our speed and flexibility are designed to match the pace of your business. We deliver the capital you need, exactly when you need it, with zero usage restrictions &mdash; funding in as little as 24 hours.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://www.capitalsensefunding.com/apply-online.php">Unlock Funding</a>
+      <a class="btn-outline" href="https://www.capitalsensefunding.com/files/124762715.pdf">Download Application Form</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC USE OF CAPITAL -->
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow label">Our Purpose</span>
+      <h2>Fueling the Businesses That Build Our Communities</h2>
+      <div class="body-copy">
+        <p>At Capital Sense Funding, we believe every business owner deserves capital that moves at the speed of their ambition. Whether you&rsquo;re upgrading equipment, securing inventory, or accelerating daily operations, we provide the fuel for your next move.</p>
+        <p>With terms ranging from <strong>three months to ten years</strong>, we structure financing around the stage your business is actually in &mdash; not a one-size-fits-all product.</p>
+      </div>
+      <blockquote>&ldquo;Zero usage restrictions. Just capital, structured around the stage your business is in.&rdquo;</blockquote>
+    </div>
+    <div class="numbered-list">
+      <div class="num-item">
+        <span class="num">01</span>
+        <div>
+          <h4>Expansion &amp; Growth</h4>
+          <p>Capital to open new locations, enter new markets, or scale what&rsquo;s already working.</p>
+        </div>
+      </div>
+      <div class="num-item">
+        <span class="num">02</span>
+        <div>
+          <h4>Equipment Upgrades</h4>
+          <p>Modernize machinery and tools without draining working capital reserves.</p>
+        </div>
+      </div>
+      <div class="num-item">
+        <span class="num">03</span>
+        <div>
+          <h4>Inventory Acquisition</h4>
+          <p>Stock up ahead of demand and never let supply be the reason you miss a sale.</p>
+        </div>
+      </div>
+      <div class="num-item">
+        <span class="num">04</span>
+        <div>
+          <h4>Meet Payroll &amp; Bridge Operations</h4>
+          <p>Smooth out timing gaps so your team &mdash; and your mission &mdash; never miss a beat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAPID QUALIFICATION -->
+<section class="qual-band">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow label">How It Works</span>
+      <h2>Rapid Qualification, Minimal Friction</h2>
+      <div class="body-copy">
+        <p><strong>Simple request:</strong> a completed digital application plus three months of recent business bank statements is all it takes to get started.</p>
+        <p><strong>Inclusive funding:</strong> no minimum credit score is required for our Business Funding products, including MCAs and loans.</p>
+      </div>
+      <blockquote>&ldquo;Funding typically finalized and wired in under 24 hours.&rdquo;</blockquote>
+    </div>
+    <div class="numbered-list">
+      <div class="num-item">
+        <span class="num">01</span>
+        <div>
+          <h4>Simple Request</h4>
+          <p>Completed digital application + 3 months of recent business bank statements.</p>
+        </div>
+      </div>
+      <div class="num-item">
+        <span class="num">02</span>
+        <div>
+          <h4>Accessible Standards</h4>
+          <p>Generally, a 600+ FICO score is required for our Revolving Line of Credit.</p>
+        </div>
+      </div>
+      <div class="num-item">
+        <span class="num">03</span>
+        <div>
+          <h4>No Minimum Score</h4>
+          <p>No minimum credit score is required for our Business Funding products (MCAs and Loans).</p>
+        </div>
+      </div>
+      <div class="num-item">
+        <span class="num">04</span>
+        <div>
+          <h4>Execution Speed</h4>
+          <p>Funding is typically finalized and wired to your account in under 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+  <div class="wrap">
+    <div class="products-head">
+      <div>
+        <span class="eyebrow label">Funding Solutions</span>
+        <h2>Financing Built for Every Stage</h2>
+      </div>
+      <a class="view-all" href="https://www.capitalsensefunding.com/apply-online.php">Apply Online &rarr;</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="pc-top">
+          <span class="pc-eyebrow label">Up to $350,000</span>
+          <h3>Line of Credit</h3>
+          <p>6&ndash;36 month terms, revolving access to capital exactly when you need it.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-top">
+          <span class="pc-eyebrow label">Up to $2,000,000</span>
+          <h3>Business Loans</h3>
+          <p>6&ndash;36 month terms structured around your business&rsquo;s growth trajectory.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-top">
+          <span class="pc-eyebrow label">$250,000 &ndash; $10,000,000+</span>
+          <h3>Equipment Financing</h3>
+          <p>We leverage the value of your business assets to fund the equipment you need.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-top">
+          <span class="pc-eyebrow label">Under 18 Months</span>
+          <h3>Merchant Cash Advance</h3>
+          <p>Short-term financing with small, regular payments until the balance reaches zero.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-top">
+          <span class="pc-eyebrow label">Secured Lending</span>
+          <h3>Asset Based Loans</h3>
+          <p>Leverage personal and/or business assets to obtain financing on your terms.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="pc-top">
+          <span class="pc-eyebrow label">Cash Flow</span>
+          <h3>Factoring</h3>
+          <p>Get an immediate advance of cash against the value of your outstanding invoices.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <span class="label">Fund Your Vision | Build Your Legacy</span>
+  <h2>Ready to put your next move into motion?</h2>
+  <div class="ctas">
+    <a class="btn-primary" href="https://www.capitalsensefunding.com/apply-online.php">Digital Funding Request</a>
+    <a class="btn-outline" href="https://www.capitalsensefunding.com/files/124762715.pdf">Download Application Form</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Capital Sense Funding" style="height: 40px;">
+        <p>Strategic capital for business owners who are building the communities around them. Fund your vision. Build your legacy.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="https://www.capitalsensefunding.com/">Home</a>
+        <a href="https://www.capitalsensefunding.com/short-term-loan.html">Business Loan</a>
+        <a href="https://www.capitalsensefunding.com/accountant-cpa.html">Accountant/CPA</a>
+        <a href="https://lp.constantcontactpages.com/sl/LhbhosA">Contact</a>
+        <a href="https://www.capitalsensefunding.com/apply-online.php">Apply Online</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>230 S. Broad St, Suite 805<br>Philadelphia, Pennsylvania 19102</p>
+        <a href="tel:2675754786">(267) 575-4786</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Capital Sense Funding. All rights reserved.</span>
+      <span class="tagline-small">FUND YOUR VISION &nbsp;|&nbsp; BUILD YOUR LEGACY</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

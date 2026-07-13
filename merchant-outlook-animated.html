@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchant Outlook | Capital Sense Funding</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Main image container */
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Curtain styling */
+    .curtain {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, #0a0a0a 0%, #1a1a1a 100%);
+      z-index: 10;
+    }
+
+    .curtain-left {
+      left: 0;
+      animation: slideOutLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+      box-shadow: inset -20px 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .curtain-right {
+      right: 0;
+      animation: slideOutRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+      box-shadow: inset 20px 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Animation keyframes */
+    @keyframes slideOutLeft {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideOutRight {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
+    /* Center divider line that appears briefly */
+    .divider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+      transform: translateX(-50%);
+      z-index: 11;
+      animation: fadeDivider 0.8s ease-out 0.3s forwards;
+    }
+
+    @keyframes fadeDivider {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+    /* Optional: Add a subtle fade-in effect to the image after curtains open */
+    .image-wrapper {
+      animation: fadeInImage 0.5s ease-out 1s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInImage {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Navigation button to replay animation */
+    .replay-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 24px;
+      background: rgba(74, 159, 212, 0.9);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 20;
+      transition: background 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .replay-btn:hover {
+      background: rgba(74, 159, 212, 1);
+    }
+
+    /* Reset animation class */
+    .reset-animation {
+      animation: none !important;
+    }
+
+    .reset-animation.curtain-left {
+      animation: slideOutLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards !important;
+    }
+
+    .reset-animation.curtain-right {
+      animation: slideOutRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-wrapper">
+      <!-- Replace with your merchant outlook image -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' style='stop-color:rgb(8,17,31);stop-opacity:1' /%3E%3Cstop offset='100%' style='stop-color:rgb(24,95,165);stop-opacity:0.2' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1920' height='1080' fill='url(%23grad1)'/%3E%3C/svg%3E" alt="Merchant Outlook - Capital Sense Funding">
+      
+      <!-- Left Curtain -->
+      <div class="curtain curtain-left"></div>
+      
+      <!-- Right Curtain -->
+      <div class="curtain curtain-right"></div>
+      
+      <!-- Center divider -->
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <!-- Replay Button -->
+  <button class="replay-btn" onclick="replayAnimation()">Replay</button>
+
+  <script>
+    function replayAnimation() {
+      const curtainLeft = document.querySelector('.curtain-left');
+      const curtainRight = document.querySelector('.curtain-right');
+      const imageWrapper = document.querySelector('.image-wrapper');
+      const divider = document.querySelector('.divider');
+
+      // Remove animations
+      curtainLeft.style.animation = 'none';
+      curtainRight.style.animation = 'none';
+      imageWrapper.style.animation = 'none';
+      divider.style.animation = 'none';
+
+      // Reset position
+      curtainLeft.style.transform = 'translateX(0)';
+      curtainRight.style.transform = 'translateX(0)';
+      imageWrapper.style.opacity = '0';
+      divider.style.opacity = '1';
+
+      // Trigger reflow to restart animation
+      void curtainLeft.offsetWidth;
+
+      // Re-apply animations
+      curtainLeft.style.animation = 'slideOutLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards';
+      curtainRight.style.animation = 'slideOutRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards';
+      imageWrapper.style.animation = 'fadeInImage 0.5s ease-out 1s forwards';
+      divider.style.animation = 'fadeDivider 0.8s ease-out 0.3s forwards';
+    }
+  </script>
+</body>
+</html>
