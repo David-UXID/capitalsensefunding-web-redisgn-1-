@@ -87,6 +87,26 @@
     }
     .nav-cta:hover { background: var(--gold-light); }
 
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 999px;
+    }
+
     /* ─── HERO ─────────────────────────────────── */
     .hero {
       min-height: 100vh;
@@ -249,8 +269,6 @@
       gap: 80px;
       align-items: center;
     }
-
-    .mission-left {}
 
     .mission-text {
       font-size: 17px;
@@ -653,8 +671,22 @@
       .mission-inner { grid-template-columns: 1fr; gap: 50px; }
       .shorts-grid { grid-template-columns: repeat(2, 1fr); }
       .shorts-header { flex-direction: column; align-items: flex-start; }
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
+      nav { padding: 0 20px; position: fixed; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 16px;
+        padding: 18px 24px 24px;
+        background: rgba(4,17,31,0.98);
+        border-top: 1px solid rgba(74,159,212,0.25);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-cta { display: none; }
       section { padding: 70px 24px; }
       .featured-video, .shorts, .social-section, .cta-banner { padding: 70px 24px; }
       footer { flex-direction: column; text-align: center; }
@@ -672,17 +704,22 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="https://www.capitalsensefunding.com/">
+    <a class="nav-logo" href="index.html">
       <img src="images/Test1.png" alt="Capital Sense Funding" style="height: 50px; margin-top: 15px;">
     </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-links">
-      <li><a href="https://www.capitalsensefunding.com/">Home</a></li>
-      <li><a href="short-term-loan.html">Business Loan</a></li>
-      <li><a href="https://www.capitalsensefunding.com/accountant-cpa.html">Accountant/CPA</a></li>
-      <li><a href="#" class="active">Merchant Outlook</a></li>
-      <li><a href="https://lp.constantcontactpages.com/sl/LhbhosA">Contact</a></li>
+      <li><a href="index.html">About</a></li>
+      <li><a href="short-term-loan.html">Business Loans</a></li>
+      <li><a href="merchant-outlook.html" class="active">Merchant Outlook</a></li>
+      <li><a href="csf-about.html">About Us</a></li>
+      <li><a href="tel:2675754786">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="https://www.capitalsensefunding.com/apply-online.php">Apply Online</a>
+    <a class="nav-cta" href="short-term-loan.html">Apply Now</a>
   </nav>
 
   <!-- HERO -->
@@ -942,6 +979,30 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) {
+          navLinks.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
   </script>
 </body>
 </html>

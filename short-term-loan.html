@@ -94,7 +94,25 @@
     white-space:nowrap;
   }
   .btn-apply:hover{background:var(--blue-bright);transform:translateY(-1px);}
-  .mobile-toggle{display:none;}
+  .mobile-toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:42px;
+    height:42px;
+    background:transparent;
+    border:0;
+    cursor:pointer;
+    padding:0;
+  }
+  .mobile-toggle span{
+    display:block;
+    width:22px;
+    height:2px;
+    background:var(--text-hi);
+    border-radius:999px;
+  }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -253,7 +271,22 @@
   /* ---------- Responsive ---------- */
   @media (max-width:900px){
     .wrap,.nav,.hero-inner{padding-left:24px;padding-right:24px;}
-    nav.links{display:none;}
+    .nav{position:relative;}
+    .mobile-toggle{display:inline-flex;}
+    nav.links{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      flex-direction:column;
+      gap:16px;
+      padding:18px 24px 24px;
+      background:rgba(10,21,38,0.97);
+      border-top:1px solid var(--line);
+    }
+    nav.links.is-open{display:flex;}
+    .header-right{display:none;}
     .split{grid-template-columns:1fr;gap:56px;}
     .product-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;gap:36px;}
@@ -264,19 +297,24 @@
 
 <header>
   <div class="nav">
-    <a href="https://www.capitalsensefunding.com/" class="logo">
+    <a href="index.html" class="logo">
       <img src="images/Test1.png" alt="Capital Sense Funding" style="height: 50px; margin-top: 15px;">
     </a>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav class="links">
-      <a href="https://www.capitalsensefunding.com/">Home</a>
+      <a href="index.html">About</a>
       <a href="short-term-loan.html" class="active">Business Loan</a>
-      <a href="https://www.capitalsensefunding.com/accountant-cpa.html">Accountant/CPA</a>
       <a href="merchant-outlook.html">Merchant Outlook</a>
-      <a href="https://lp.constantcontactpages.com/sl/LhbhosA">Contact</a>
+      <a href="csf-about.html">About Us</a>
+      <a href="tel:2675754786">Contact</a>
     </nav>
     <div class="header-right">
       <span class="phone">(267) 575-4786</span>
-      <a class="btn-apply" href="https://www.capitalsensefunding.com/apply-online.php">Apply Online</a>
+      <a class="btn-apply" href="short-term-loan.html">Apply Now</a>
     </div>
   </div>
 </header>

@@ -61,6 +61,25 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--gold); }
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 999px;
+  }
   .nav-cta {
     background: var(--gold);
     color: var(--navy) !important;
@@ -551,6 +570,28 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
   .reveal-delay-4 { transition-delay: 0.4s; }
+
+  @media (max-width: 900px) {
+    nav {
+      padding: 0 24px;
+      min-height: 72px;
+    }
+    .nav-toggle { display: inline-flex; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px 24px 24px;
+      background: rgba(13,27,42,0.98);
+      border-top: 1px solid rgba(200,169,110,0.16);
+    }
+    .nav-links.is-open { display: flex; }
+    .nav-links a { font-size: 0.72rem; }
+  }
 </style>
 </head>
 <body>
@@ -558,11 +599,16 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo"><img src="images/Test1.png" alt="Capital Sense Funding logo"></div>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="index.html">About</a></li>
     <li><a href="short-term-loan.html">Business Loans</a></li>
     <li><a href="merchant-outlook.html" title="Visit Merchant Outlook">Merchant Outlook</a></li>
-    <li><a href="#">Accountants</a></li>
+    <li><a href="csf-about.html">About Us</a></li>
     <li><a href="short-term-loan.html" class="nav-cta">Apply Now</a></li>
   </ul>
 </nav>
@@ -856,6 +902,31 @@
       // On unexpected errors, fallback to opening YouTube page
       window.open('https://www.youtube.com/watch?v=' + videoId, '_blank');
     }
+  }
+</script>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        navLinks.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 </script>
 </body>
