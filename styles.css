@@ -40,9 +40,9 @@
   }
   .nav-logo img {
     display: block;
-    height: 100px;
+    height: 150px;
     width: auto;
-    margin-top: 4px;
+    margin-top: 2px;
   }
   .nav-toggle {
     display: none;
