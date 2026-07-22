@@ -28,7 +28,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 56px;
-    height: 72px;
+    height: 92px;
     background: rgba(13,27,42,0.97);
     backdrop-filter: blur(12px);
   }
@@ -40,9 +40,9 @@
   }
   .nav-logo img {
     display: block;
-    height: 70px;
+    height: 72px;
     width: auto;
-    margin-top: 6px;
+    margin-top: 8px;
   }
   .nav-toggle {
     display: none;
@@ -92,7 +92,7 @@
     background: var(--navy);
     display: flex; align-items: flex-end;
     overflow: hidden;
-    padding: 0 56px 100px;
+    padding: 132px 56px 100px;
   }
   .hero-bg {
     position: absolute; inset: 0;
