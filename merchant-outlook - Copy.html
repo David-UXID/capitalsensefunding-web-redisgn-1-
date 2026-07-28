@@ -41,10 +41,17 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 40px;
-      height: 72px;
+      min-height: 112px;
       backdrop-filter: blur(8px);
     }
 
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      min-width: 0;
+    }
     .nav-logo {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
@@ -52,6 +59,17 @@
       color: var(--white);
       text-decoration: none;
       letter-spacing: 0.05em;
+    }
+    .nav-tagline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(0.62rem, 0.95vw, 0.72rem);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+      line-height: 1.3;
+      white-space: normal;
+      max-width: 240px;
     }
     .nav-logo span { color: var(--gold); }
 
@@ -143,18 +161,20 @@
       font-size: 13px;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--white);
       margin-bottom: 24px;
       position: relative;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 16px;
+      flex-wrap: wrap;
     }
     .hero-eyebrow::before, .hero-eyebrow::after {
       content: '';
       width: 40px;
       height: 1px;
-      background: var(--gold);
+      background: var(--white);
       opacity: 0.5;
     }
 
@@ -711,16 +731,19 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="index.html">
-      <img src="images/Test1.png" alt="Capital Sense Funding" style="height: 80px; margin-top: 6px;">
-    </a>
+    <div class="nav-brand">
+      <a class="nav-logo" href="index.html">
+        <img src="images/Test1.png" alt="Capital Sense Funding" style="height: 80px; margin-top: 6px;">
+      </a>
+      <div class="nav-tagline">Fund your Vision | Build your Legacy</div>
+    </div>
     <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">About</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="short-term-loan.html">Business Loans</a></li>
       <li><a href="merchant-outlook.html" class="active">Merchant Outlook</a></li>
     </ul>
@@ -733,7 +756,7 @@
     <div class="hero-grid"></div>
 
     <div class="hero-eyebrow fade-up visible">
-      Capital Sense Funding Presents
+      Fund your Vision | Build your Legacy
     </div>
 
     <h1 class="hero-title fade-up visible delay-1">

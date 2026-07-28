@@ -36,7 +36,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 56px;
-    height: 72px;
+    min-height: 112px;
     background: rgba(13,27,42,0.97);
     backdrop-filter: blur(12px);
   }
@@ -46,9 +46,18 @@
   }
   .nav-logo img {
     display: block;
-    height: 65px;
+    height: 72px;
     width: auto;
     margin-top: 6px;
+  }
+  .nav-tagline {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    white-space: nowrap;
+    margin-left: 8px;
   }
   .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a {
@@ -598,14 +607,17 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="images/Test1.png" alt="Capital Sense Funding logo"></div>
+  <div class="nav-brand">
+    <div class="nav-logo"><img src="images/Test1.png" alt="Capital Sense Funding logo"></div>
+    <div class="nav-tagline">Fund your Vision | Build your Legacy</div>
+  </div>
   <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>
   </button>
   <ul class="nav-links">
-    <li><a href="index.html">About</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="short-term-loan.html">Business Loans</a></li>
     <li><a href="accountant-cpa.html">Accountant / CPA</a></li>
     <li><a href="merchant-outlook.html" title="Visit Merchant Outlook">Merchant Outlook</a></li>
@@ -622,7 +634,7 @@
       <div class="hero-eyebrow-line"></div>
       <div class="hero-eyebrow-copy">
 
-        <span class="hero-eyebrow-text">Fund your vision, Build your Legacy</span>
+        <span class="hero-eyebrow-text">Fund your Vision | Build your Legacy</span>
       </div>
     </div>
     <h1>Built to <em>Eliminate</em><br>Every Barrier<br>Between You & Capital</h1>

@@ -55,10 +55,17 @@
     border-bottom:1px solid var(--line);
   }
   .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:20px 40px;max-width:1240px;margin:0 auto;
+    display:flex;align-items:center;
+    justify-content:flex-start;
+    padding:22px 40px;max-width:1240px;margin:0 auto;min-height:112px;gap:16px;flex-wrap:nowrap;
   }
+  .nav-brand{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0;flex-shrink:0;}
   .logo{display:flex;align-items:center;gap:14px;}
+  .nav-tagline{
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:clamp(0.62rem,0.95vw,0.74rem);font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--text-hi);line-height:1.3;max-width:240px;white-space:normal;
+  }
   .logo svg{width:42px;height:42px;flex-shrink:0;}
   .logo-text{
     font-family:'Barlow Condensed',sans-serif;
@@ -72,7 +79,7 @@
     font-size:20px;font-weight:700;letter-spacing:0.08em;color:#fff;
     display:block;
   }
-  nav.links{display:flex;align-items:center;gap:38px;}
+  nav.links{display:flex;align-items:center;gap:24px;margin-left:8px;flex-shrink:0;}
   nav.links a{
     font-family:'Barlow Condensed',sans-serif;
     font-size:15px;font-weight:600;letter-spacing:0.12em;
@@ -80,7 +87,7 @@
     transition:color .2s;
   }
   nav.links a:hover, nav.links a.active{color:var(--blue-bright);}
-  .header-right{display:flex;align-items:center;gap:28px;}
+  .header-right{display:flex;align-items:center;gap:16px;margin-left:auto;flex-shrink:0;}
   .phone{
     font-family:'Barlow Condensed',sans-serif;
     font-size:15px;font-weight:600;letter-spacing:0.06em;color:var(--text-hi);
@@ -129,9 +136,9 @@
   .hero-inner{max-width:1240px;margin:0 auto;}
   .eyebrow-row{
     display:flex;align-items:center;gap:18px;margin-bottom:40px;
-    color:var(--blue-bright);
+    color:#fff;
   }
-  .eyebrow-row .rule{height:1px;flex:0 0 60px;background:var(--blue-bright);opacity:.5;}
+  .eyebrow-row .rule{height:1px;flex:0 0 60px;background:#fff;opacity:.5;}
   .eyebrow-row span{font-size:14px;}
   .hero h1{
     font-size:clamp(40px,5.4vw,72px);
@@ -301,23 +308,25 @@
 
 <header>
   <div class="nav">
-    <a href="index.html" class="logo">
-      <img src="images/Test1.png" alt="Capital Sense Funding" style="height: 80px; margin-top: 6px;">
-    </a>
+    <div class="nav-brand">
+      <a href="index.html" class="logo">
+        <img src="images/Test1.png" alt="Capital Sense Funding" style="height: 80px; margin-top: 6px;">
+      </a>
+      <div class="nav-tagline">Fund your Vision | Build your Legacy</div>
+    </div>
     <button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
     <nav class="links">
-      <a href="index.html">About</a>
+      <a href="index.html">Home</a>
       <a href="short-term-loan.html" class="active">Business Loan</a>
       <a href="accountant-cpa.html">Accountant / CPA</a>
       <a href="merchant-outlook.html">Merchant Outlook</a>
     </nav>
     <div class="header-right">
       <a class="btn-apply" href="short-term-loan.html">Apply Now</a>
-      <span class="phone">(267) 575-4786</span>
     </div>
   </div>
 </header>
@@ -327,7 +336,7 @@
   <div class="hero-inner">
     <div class="eyebrow-row">
       <span class="rule"></span>
-      <span class="label">Capital Sense Funding Presents</span>
+      <span class="label">Fund your Vision | Build your Legacy</span>
     </div>
     <h1>Strategic Capital for <em>High&#8209;Performance</em> Growth</h1>
     <p class="lede">Our speed and flexibility are designed to match the pace of your business. We deliver the capital you need, exactly when you need it, with zero usage restrictions &mdash; funding in as little as 24 hours.</p>
@@ -513,7 +522,6 @@
       <div class="footer-col">
         <h5>Contact</h5>
         <p>230 S. Broad St, Suite 805<br>Philadelphia, Pennsylvania 19102</p>
-        <a href="tel:2675754786">(267) 575-4786</a>
       </div>
     </div>
     <div class="footer-bottom">
