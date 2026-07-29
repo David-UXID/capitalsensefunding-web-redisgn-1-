@@ -98,15 +98,26 @@
   }
   .nav-links a:hover { color: var(--gold); }
   .nav-cta {
-    background: var(--gold);
-    color: var(--navy) !important;
-    padding: 10px 22px;
-    font-weight: 600 !important;
-    font-size: 0.75rem !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #5b9bd5;
+    color: #fff !important;
+    padding: 13px 26px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
     letter-spacing: 0.1em !important;
-    transition: background 0.2s !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s !important;
   }
-  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+  .nav-cta:hover {
+    background: #7fb4e6 !important;
+    color: #fff !important;
+    transform: translateY(-1px);
+  }
 
   /* ── HERO ── */
   .hero {
