@@ -11,8 +11,8 @@
   reveals.forEach(el => observer.observe(el));
 
   // Mobile navigation toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const navToggle = document.querySelector('.nav-toggle, .mobile-toggle');
+  const navLinks = document.querySelector('.nav-links, .links');
 
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
