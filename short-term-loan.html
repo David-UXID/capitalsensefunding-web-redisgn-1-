@@ -80,7 +80,7 @@
     font-size:20px;font-weight:700;letter-spacing:0.08em;color:#fff;
     display:block;
   }
-  nav.links{display:flex;align-items:center;gap:24px;margin-left:8px;flex-shrink:0;}
+  nav.links{display:flex;align-items:center;gap:24px;margin-left:auto;margin-right:12px;flex-shrink:0;}
   nav.links a{
     font-family:'Barlow Condensed',sans-serif;
     font-size:15px;font-weight:600;letter-spacing:0.12em;
@@ -88,7 +88,7 @@
     transition:color .2s;
   }
   nav.links a:hover, nav.links a.active{color:var(--blue-bright);}
-  .header-right{display:flex;align-items:center;gap:16px;margin-left:auto;flex-shrink:0;}
+  .header-right{display:flex;align-items:center;gap:16px;margin-left:0;flex-shrink:0;}
   .phone{
     font-family:'Barlow Condensed',sans-serif;
     font-size:15px;font-weight:600;letter-spacing:0.06em;color:var(--text-hi);
@@ -304,27 +304,39 @@
       flex-shrink:0;
     }
     nav.links{
-      display:none;
+      display:flex;
       position:absolute;
-      top:100%;
-      left:0;
-      right:0;
+      top:calc(100% + 8px);
+      left:24px;
+      right:24px;
       flex-direction:column;
-      gap:16px;
-      padding:18px 24px 24px;
-      background:rgba(10,21,38,0.97);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+      gap:0;
+      padding:0;
+      background:rgba(10,21,38,0.98);
+      border:1px solid var(--line);
+      border-radius:14px;
       z-index:60;
-      box-shadow:0 10px 26px rgba(0,0,0,0.25);
-      width:100%;
+      box-shadow:0 16px 40px rgba(0,0,0,0.35);
+      overflow:hidden;
+      max-height:0;
+      opacity:0;
+      pointer-events:none;
+      transition:max-height 0.25s ease, opacity 0.25s ease;
     }
-    nav.links.is-open{display:flex;}
+    nav.links.is-open{
+      max-height:320px;
+      opacity:1;
+      pointer-events:auto;
+      padding:12px 0;
+    }
     nav.links a{
+      display:block;
       font-size:15px;
       color:var(--text-hi);
-      padding:4px 0;
+      padding:14px 24px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
+    nav.links a:last-child{border-bottom:0;}
     .header-right{display:none;}
     .split{grid-template-columns:1fr;gap:56px;}
     .product-grid{grid-template-columns:1fr;}
@@ -560,33 +572,5 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileNav = document.querySelector('.links');
-    const mobileToggle = document.querySelector('.mobile-toggle');
-
-    if (!mobileNav || !mobileToggle) return;
-
-    mobileToggle.addEventListener('click', () => {
-      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-      mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
-      mobileNav.classList.toggle('is-open', !isExpanded);
-    });
-
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('is-open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900) {
-        mobileNav.classList.remove('is-open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-</script>
 </body>
 </html>
