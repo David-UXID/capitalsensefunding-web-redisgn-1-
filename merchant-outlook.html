@@ -97,6 +97,21 @@
       transition: color 0.2s;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links .nav-mobile-cta {
+      display: none;
+      margin-top: 8px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      justify-content: center;
+    }
+    .nav-links .nav-mobile-cta:hover { background: var(--gold-light); }
 
     .nav-cta {
       display: inline-flex;
@@ -723,6 +738,7 @@
         border-top: 1px solid rgba(74,159,212,0.25);
       }
       .nav-links.is-open { display: flex; }
+      .nav-links .nav-mobile-cta { display: inline-flex; }
       .nav-cta { display: none; }
       section { padding: 70px 24px; }
       .featured-video, .shorts, .social-section, .cta-banner { padding: 70px 24px; }
@@ -757,6 +773,7 @@
       <li><a href="short-term-loan.html">Business Loans</a></li>
       <li><a href="accountant-cpa.html">Accountant / CPA</a></li>
       <li><a href="merchant-outlook.html" class="active">Merchant Outlook</a></li>
+      <li><a class="nav-mobile-cta" href="https://www.capitalsensefunding.com/apply-online.php">Apply Now</a></li>
     </ul>
     <a class="nav-cta" href="https://www.capitalsensefunding.com/apply-online.php">Apply Now</a>
   </nav>
