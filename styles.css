@@ -699,8 +699,7 @@
       padding: 0 24px;
     }
     .stat-item {
-      padding: 32px 16px;
-      border-right: 0;
+      padding: 32px 16px;      padding-inline: 16px;      border-right: 0;
       border-bottom: 1px solid rgba(200,169,110,0.12);
     }
     .stat-item:nth-child(odd) { border-right: 1px solid rgba(200,169,110,0.12); }
@@ -768,6 +767,13 @@
     .stats-bar {
       grid-template-columns: 1fr;
       padding: 0 18px;
+    }
+    .stat-item {
+      padding: 32px 16px;
+      padding-inline: 16px;
+    }
+    .stat-item:first-child {
+      padding-left: 16px;
     }
     .stat-item,
     .stat-item:nth-child(odd) {
