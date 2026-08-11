@@ -27,10 +27,11 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 56px;
+    padding: 0 40px;
     min-height: 112px;
-    background: rgba(13,27,42,0.97);
-    backdrop-filter: blur(12px);
+    background: rgba(4, 17, 31, 0.96);
+    border-bottom: 1px solid rgba(74, 159, 212, 0.25);
+    backdrop-filter: blur(8px);
   }
   .site-nav { flex-wrap: nowrap; gap: 18px; }
   .nav-brand {
@@ -41,31 +42,36 @@
     min-width: 0;
   }
   .nav-logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     text-decoration: none;
     flex-shrink: 0;
+    padding-top: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    letter-spacing: 0.05em;
   }
   .nav-logo img {
     display: block;
-    height: 76px;
+    height: 58px;
     width: auto;
     margin-top: 0;
   }
   .nav-tagline {
-    max-width: 100%;
-    min-width: max-content;
+    max-width: 240px;
     display: inline-block;
     flex-shrink: 0;
-    font-size: clamp(0.58rem, 0.9vw, 0.72rem);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(0.62rem, 0.95vw, 0.72rem);
     font-weight: 600;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.9);
+    color: var(--gray);
     line-height: 1.3;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
+    white-space: normal;
+    margin-top: -2px;
   }
   .nav-toggle {
     display: none;
@@ -86,17 +92,24 @@
     background: var(--white);
     border-radius: 999px;
   }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
   .nav-links a {
-    font-size: 0.78rem;
-    font-weight: 500;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--gray);
     text-decoration: none;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--gold); }
   .nav-cta {
     display: inline-flex;
     align-items: center;
@@ -106,8 +119,8 @@
     padding: 16px 32px;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700 !important;
-    font-size: 1.05rem !important;
-    letter-spacing: 0.1em !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.12em !important;
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
@@ -145,18 +158,67 @@
   }
   .hero-content { position: relative; z-index: 2; max-width: 900px; }
   .hero-eyebrow {
-    display: flex; align-items: flex-start; gap: 16px;
+    display: inline-flex; align-items: center; gap: 10px;
     margin-bottom: 32px;
+    width: fit-content; max-width: 100%;
+    position: relative; padding-right: 34px;
     opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
   }
-  .hero-eyebrow-line { width: 40px; height: 1px; background: #fff; }
-  .hero-eyebrow-copy { display: flex; flex-direction: column; gap: 6px; }
+  .hero-eyebrow-line {
+    flex: 0 0 24px; height: 1px; background: #fff;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    position: absolute; right: 0; top: 50%;
+    width: 24px; height: 1px; background: #fff;
+    transform: translateY(-50%);
+  }
+  .hero-eyebrow-copy {
+    display: flex; flex-direction: column; gap: 6px;
+    max-width: min(100%, 320px);
+  }
   .hero-eyebrow-text {
     font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em;
     text-transform: uppercase; color: #fff; line-height: 1.4;
-    max-width: 320px;
+    max-width: 100%;
     white-space: nowrap;
   }
+
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .section-eyebrow {
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      padding-right: 0;
+    }
+
+    .hero-eyebrow-line,
+    .section-eyebrow-line {
+      flex-basis: 18px;
+    }
+
+    .hero-eyebrow::after,
+    .section-eyebrow::after {
+      position: static;
+      transform: none;
+      flex: 0 0 18px;
+      margin-top: 2px;
+    }
+
+    .hero-eyebrow-text {
+      font-size: clamp(0.58rem, 1.8vw, 0.72rem);
+      letter-spacing: 0.12em;
+      line-height: 1.5;
+      max-width: 100%;
+      white-space: normal;
+    }
+
+    .section-eyebrow-text {
+      white-space: normal;
+    }
+  }
+
   .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(3rem, 6vw, 5.5rem);
@@ -218,12 +280,22 @@
   /* ── SECTION BASE ── */
   section { padding: 120px 56px; }
   .section-eyebrow {
-    display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+    display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px;
+    width: fit-content; max-width: 100%; position: relative; padding-right: 34px;
   }
-  .section-eyebrow-line { width: 32px; height: 1px; background: var(--gold); }
+  .section-eyebrow-line {
+    flex: 0 0 24px; height: 1px; background: var(--gold);
+  }
+  .section-eyebrow::after {
+    content: '';
+    position: absolute; right: 0; top: 50%;
+    width: 24px; height: 1px; background: var(--gold);
+    transform: translateY(-50%);
+  }
   .section-eyebrow-text {
     font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em;
     text-transform: uppercase; color: var(--gold);
+    white-space: nowrap;
   }
   h2.section-title {
     font-family: 'Playfair Display', serif;
