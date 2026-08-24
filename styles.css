@@ -675,6 +675,7 @@
     font-family: 'DM Mono', monospace;
     font-size: 0.82rem; color: var(--gold); text-decoration: none;
   }
+  .footer-copy { color: #fff; }
 
   @media (max-width: 900px) {
     nav {
