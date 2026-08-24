@@ -683,7 +683,7 @@
       font-size: 16px;
       font-weight: 700;
       letter-spacing: 0.16em;
-      text-transform: uppercase;
+      text-transform: lowercase;
       text-decoration: underline;
       text-underline-offset: 5px;
       transition: color 0.2s;
@@ -734,6 +734,9 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       transition: color 0.2s;
+    }
+    .footer-links a[href^="mailto:"] {
+      text-transform: lowercase;
     }
     .footer-links a:hover { color: var(--gold); }
 
