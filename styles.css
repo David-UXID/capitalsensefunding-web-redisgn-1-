@@ -673,7 +673,7 @@
   .footer-bottom p { font-size: 0.78rem; color: var(--gray); }
   .footer-phone {
     font-family: 'DM Mono', monospace;
-    font-size: 0.82rem; color: var(--gold); text-decoration: none;
+    font-size: 0.82rem; color: #fff; text-decoration: none;
   }
   .footer-copy { color: #fff; }
 
