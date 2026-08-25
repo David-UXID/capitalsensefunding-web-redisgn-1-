@@ -54,12 +54,19 @@
       min-width: 0;
     }
     .nav-logo {
+      display: inline-flex;
+      align-items: center;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
       font-size: 18px;
       color: var(--white);
       text-decoration: none;
       letter-spacing: 0.05em;
+    }
+    .nav-logo img {
+      display: block;
+      height: 58px;
+      width: auto;
     }
     .nav-tagline {
       font-family: 'Barlow Condensed', sans-serif;
@@ -742,7 +749,7 @@
   <nav>
     <div class="nav-brand">
       <a class="nav-logo" href="index.html">
-        <img src="images/Test1.png" alt="Capital Sense Funding" style="height: 80px; margin-top: 6px;">
+        <img src="images/Test1.png" alt="Capital Sense Funding">
       </a>
       <div class="nav-tagline">Fund your Vision | Build your Legacy</div>
     </div>
