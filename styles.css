@@ -683,7 +683,11 @@
       min-height: 92px;
     }
     .site-nav { flex-wrap: wrap; }
-    .nav-tagline { display: none; }
+    .nav-tagline {
+      display: block;
+      max-width: 240px;
+      white-space: normal;
+    }
     .nav-toggle { display: inline-flex; }
     .nav-links {
       display: none;
