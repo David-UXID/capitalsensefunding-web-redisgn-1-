@@ -228,7 +228,8 @@
     margin-bottom: 32px;
     opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
   }
-  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero h1 em { font-style: italic; color: var(--white); }
+  .hero-funding-text { color: var(--gold-light); }
   .hero-offer {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em;
