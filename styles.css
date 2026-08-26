@@ -271,10 +271,12 @@
     background: var(--navy-mid);
   }
   .stats-intro {
+    display: block;
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.2rem, 5vw, 2.2rem); font-weight: 700; letter-spacing: 0.15em;
     text-transform: uppercase; line-height: 1.6;
-    color: var(--white); 
+    color: var(--white);
+    text-decoration: none;
     padding: 56px 56px 32px;
     margin: 0;
     opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
