@@ -943,23 +943,33 @@
       font-size: 1rem;
     }
 
+    .stats-intro {
+      padding: 32px 18px 20px;
+      font-size: 1.45rem;
+      line-height: 1.35;
+    }
     .stats-bar {
       grid-template-columns: 1fr;
       padding: 0 18px;
     }
     .stat-item {
-      padding: 32px 16px;
+      padding: 20px 16px;
       padding-inline: 16px;
+      margin: 12px 0;
+      border: 1px solid rgba(200,169,110,0.2);
     }
-    .stat-item:first-child {
-      padding-left: 16px;
+    .stat-item .stat-number {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+    .stat-item .stat-label {
+      font-size: 0.78rem;
     }
     .stat-item,
     .stat-item:nth-child(odd) {
-      border-right: 0;
-      border-bottom: 1px solid rgba(200,169,110,0.12);
+      border: 1px solid rgba(200,169,110,0.2);
     }
-    .stat-item:last-child { border-bottom: 0; }
+    .stat-item:last-child { border-bottom: 1px solid rgba(200,169,110,0.2); }
 
     .values-grid {
       grid-template-columns: 1fr;
