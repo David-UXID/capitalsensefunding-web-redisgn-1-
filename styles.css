@@ -613,7 +613,7 @@
 
   /* ── MISSION STRIP ── */
   .mission-strip {
-    background: var(--gold);
+    background: #3D96D6;
     padding: 80px 56px;
     display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
   }
@@ -621,6 +621,13 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 3vw, 2.8rem);
     font-weight: 500; line-height: 1.2; color: var(--navy);
+    white-space: nowrap;
+  }
+  .mission-strip h2 .mission-divider {
+    color: var(--navy);
+    opacity: 0.5;
+    font-weight: 300;
+    margin: 0 4px;
   }
   .mission-strip p {
     font-size: 1rem; line-height: 1.8; color: var(--navy-mid);
@@ -886,6 +893,9 @@
       grid-template-columns: 1fr;
       gap: 40px;
     }
+    .mission-strip h2 {
+      font-size: clamp(1.3rem, 4.4vw, 2.6rem);
+    }
 
     .values-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -994,6 +1004,9 @@
     .btn-secondary {
       width: 100%;
       text-align: center;
+    }
+    .mission-strip h2 {
+      font-size: clamp(0.95rem, 4.2vw, 1.6rem);
     }
   }
 
