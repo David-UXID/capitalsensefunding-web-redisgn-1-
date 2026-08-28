@@ -958,6 +958,9 @@
       margin: 12px 0;
       border: 1px solid rgba(200,169,110,0.2);
     }
+    .stat-item:first-child {
+      padding-left: 16px;
+    }
     .stat-item .stat-number {
       font-size: 1.6rem;
       margin-bottom: 6px;
