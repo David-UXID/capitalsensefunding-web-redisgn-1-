@@ -243,6 +243,19 @@
   }
   .num-item p{font-size:15.5px;color:var(--text-body);}
 
+  /* ---------- Capital use ---------- */
+  .capital-use-intro{max-width:660px;}
+  .capital-use-intro h2{font-size:clamp(32px,3.4vw,46px);margin-bottom:26px;}
+  .capital-use-intro .body-copy p{margin-bottom:20px;font-size:16.5px;}
+  .capital-use-image{
+    width:100%;margin:52px 0 64px;overflow:hidden;border-radius:8px;
+    aspect-ratio:16 / 7;background:var(--bg-raised);
+  }
+  .capital-use-image img{width:100%;height:100%;object-fit:cover;}
+  .capital-use-list{max-width:860px;}
+  .capital-use-list h3{font-size:clamp(28px,3vw,40px);margin-bottom:28px;}
+  .capital-use-list blockquote{margin-top:36px;}
+
   /* ---------- Products grid ---------- */
   .products-head{
     display:flex;justify-content:space-between;align-items:flex-end;
@@ -422,18 +435,22 @@
 </section>
 
 <!-- STRATEGIC USE OF CAPITAL -->
-<section>
-  <div class="wrap split">
-    <div>
+<section class="capital-use">
+  <div class="wrap">
+    <div class="capital-use-intro">
       <span class="eyebrow label">Our Purpose</span>
       <h2>Fueling the Businesses That Build Our Communities</h2>
       <div class="body-copy">
         <p>At Capital Sense Funding, we believe every business owner deserves capital that moves at the speed of their ambition. Whether you&rsquo;re upgrading equipment, securing inventory, or accelerating daily operations, we provide the fuel for your next move.</p>
         <p>With terms ranging from <strong>three months to ten years</strong>, we structure financing around the stage your business is actually in &mdash; not a one-size-fits-all product.</p>
       </div>
-      <blockquote>&ldquo;Zero usage restrictions. Just capital, structured around the stage your business is in.&rdquo;</blockquote>
     </div>
-    <div class="numbered-list">
+    <figure class="capital-use-image">
+      <img src="images/Chef.png" alt="Chef at work in a restaurant kitchen">
+    </figure>
+    <div class="capital-use-list">
+      <h3>Capital That Keeps Your Business Moving</h3>
+      <div class="numbered-list">
       <div class="num-item">
         <span class="num">01</span>
         <div>
@@ -462,6 +479,8 @@
           <p>Smooth out timing gaps so your team &mdash; and your mission &mdash; never miss a beat.</p>
         </div>
       </div>
+      </div>
+      <blockquote>&ldquo;Zero usage restrictions. Just capital, structured around the stage your business is in.&rdquo;</blockquote>
     </div>
   </div>
 </section>
