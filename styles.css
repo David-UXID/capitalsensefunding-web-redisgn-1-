@@ -145,9 +145,9 @@
   .hero-bg {
     position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 70% 60% at 80% 40%, rgba(200,169,110,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 80% at 20% 80%, rgba(26,46,69,0.8) 0%, transparent 70%),
-      linear-gradient(160deg, #0d1b2a 0%, #1a2e45 50%, #0d1b2a 100%);
+      linear-gradient(90deg, rgba(4, 17, 31, 0.86) 0%, rgba(10, 29, 54, 0.74) 48%, rgba(10, 29, 54, 0.22) 100%),
+      linear-gradient(180deg, rgba(4, 17, 31, 0.14) 0%, rgba(4, 17, 31, 0.38) 100%),
+      url('images/integrated-health-care.jpg') center center / cover no-repeat;
   }
   .hero-grid {
     position: absolute; inset: 0;
@@ -465,38 +465,37 @@
 
   /* ── WHO WE ARE ── */
   .who-we-are {
-    background: var(--cream);
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    position: relative;
+    isolation: isolate;
+    background:
+      linear-gradient(90deg, rgba(4, 17, 31, 0.97) 0%, rgba(10, 29, 54, 0.9) 45%, rgba(10, 29, 54, 0.28) 100%),
+      linear-gradient(180deg, rgba(4, 17, 31, 0.1) 0%, rgba(4, 17, 31, 0.72) 100%),
+      url('images/construction.avif') center / cover no-repeat;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 0.65fr); gap: 80px; align-items: center;
   }
-  .who-left {}
+  .who-left { position: relative; z-index: 1; }
+  .who-we-are .section-eyebrow-text { color: var(--gold-light); }
+  .who-we-are .section-eyebrow-line,
+  .who-we-are .section-eyebrow::after { background: var(--gold-light); }
+  .who-we-are .section-title { color: var(--white); }
   .who-left p {
-    font-size: 1.05rem; line-height: 1.85; color: var(--text-body);
+    font-size: 1.05rem; line-height: 1.85; color: var(--gray-light);
     margin-top: 32px; margin-bottom: 24px;
   }
-  .who-left p strong { color: var(--navy); font-weight: 500; }
+  .who-left p strong { color: var(--white); font-weight: 500; }
   .who-cta {
     display: inline-flex; align-items: center; gap: 12px;
     font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--navy); text-decoration: none;
+    text-transform: uppercase; color: var(--white); text-decoration: none;
     border-bottom: 2px solid var(--gold); padding-bottom: 4px;
     transition: gap 0.2s, color 0.2s;
   }
   .who-cta:hover { gap: 18px; color: var(--gold); }
   .who-cta-arrow { font-size: 1rem; }
-  .who-image {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    border-radius: 8px;
-  }
-  .who-image img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-  }
   .who-legacy {
     grid-column: 1 / -1;
     position: relative;
-    background: var(--navy-mid);
+    background: rgba(10, 29, 54, 0.94);
     padding: 56px 48px;
     border-left: 3px solid var(--gold);
   }
@@ -647,21 +646,28 @@
 
   /* ── ECOSYSTEM ── */
   .ecosystem-section {
-    background: var(--navy-mid);
+    position: relative;
+    isolation: isolate;
+    background:
+      linear-gradient(90deg, rgba(4, 17, 31, 0.84) 0%, rgba(10, 29, 54, 0.72) 50%, rgba(10, 29, 54, 0.38) 100%),
+      linear-gradient(180deg, rgba(4, 17, 31, 0.12) 0%, rgba(4, 17, 31, 0.52) 100%),
+      url('images/retail.jpg') center / cover no-repeat;
     padding: 120px 56px;
   }
+  .ecosystem-header,
+  .ecosystem-steps { position: relative; z-index: 1; }
   .ecosystem-header { margin-bottom: 80px; max-width: 600px; }
   .ecosystem-header p {
-    font-size: 1rem; line-height: 1.8; color: var(--gray);
+    font-size: 1rem; line-height: 1.8; color: var(--gray-light);
     margin-top: 32px;
   }
   .ecosystem-steps {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-    border-top: 1px solid rgba(200,169,110,0.2);
+    border-top: 1px solid rgba(255,255,255,0.28);
   }
   .ecosystem-step {
     padding: 56px 40px 56px 0;
-    border-right: 1px solid rgba(200,169,110,0.12);
+    border-right: 1px solid rgba(255,255,255,0.2);
     padding-right: 40px;
     margin-right: 0;
   }
@@ -678,7 +684,7 @@
     color: var(--white); margin-bottom: 16px;
   }
   .ecosystem-step p {
-    font-size: 0.875rem; line-height: 1.75; color: var(--gray);
+    font-size: 0.875rem; line-height: 1.75; color: var(--gray-light);
   }
 
   /* ── MERCHANT OUTLOOK ── */
