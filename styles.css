@@ -821,6 +821,10 @@
     font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 16px;
   }
   .footer-logo span { color: var(--gold-light); }
+  .footer-logo a {
+    display: inline-flex;
+    align-items: center;
+  }
   .footer-logo img {
     display: block;
     height: 58px;
@@ -881,7 +885,7 @@
       border-top: 1px solid rgba(200,169,110,0.16);
     }
     .nav-links.is-open { display: flex; }
-    .nav-links a { font-size: 0.72rem; }
+    .nav-links a { font-size: 0.78rem; }
 
     .hero,
     .stats-bar,
@@ -967,9 +971,6 @@
     .nav-logo img {
       height: 58px;
       margin-top: 0;
-    }
-    .footer-logo img {
-      height: 40px;
     }
     .hero,
     section,
