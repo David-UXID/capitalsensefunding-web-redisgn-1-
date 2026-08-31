@@ -211,7 +211,7 @@
       letter-spacing: 0.12em;
       line-height: 1.5;
       max-width: 100%;
-      white-space: normal;
+      white-space: nowrap;
     }
 
     .section-eyebrow-text {
