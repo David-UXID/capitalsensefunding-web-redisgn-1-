@@ -435,6 +435,9 @@
     position: relative;
     z-index: 2;
   }
+  .barrier-section .section-eyebrow-text { color: var(--gold-light); }
+  .barrier-section .section-eyebrow-line,
+  .barrier-section .section-eyebrow::after { background: var(--gold-light); }
   .barrier-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.4rem, 4.5vw, 3.8rem);
@@ -446,7 +449,7 @@
   }
   .barrier-section h2 em {
     font-style: italic;
-    color: var(--gold);
+    color: var(--gold-light);
   }
   .barrier-sub {
     font-size: 1.1rem;
@@ -512,7 +515,7 @@
   }
   .who-quote-attr {
     font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-light);
   }
   .location-badge {
     margin-top: 40px;
@@ -523,10 +526,13 @@
   }
   .location-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
   .location-text { font-size: 0.82rem; color: var(--gray-light); letter-spacing: 0.06em; }
-  .location-text strong { color: var(--gold); }
+  .location-text strong { color: var(--gold-light); }
 
   /* ── VALUES ── */
   .values-section { background: var(--navy); }
+  .values-section .section-eyebrow-text { color: var(--gold-light); }
+  .values-section .section-eyebrow-line,
+  .values-section .section-eyebrow::after { background: var(--gold-light); }
   .values-grid {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
     margin-top: 72px;
@@ -549,7 +555,7 @@
   .value-card:hover::after { width: 100%; }
   .value-number {
     font-family: 'DM Mono', monospace;
-    font-size: 0.7rem; color: var(--gold); opacity: 0.6;
+    font-size: 0.7rem; color: var(--gold-light);
     letter-spacing: 0.1em; margin-bottom: 24px;
     display: block;
   }
@@ -595,7 +601,7 @@
   .service-card:hover h3,
   .service-card:hover p,
   .service-card:hover .service-amount { color: var(--white); }
-  .service-card:hover .service-tag { background: rgba(200,169,110,0.2); color: var(--gold); }
+  .service-card:hover .service-tag { background: rgba(200,169,110,0.2); color: var(--gold-light); }
   .service-tag {
     display: inline-block;
     font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em;
@@ -657,6 +663,9 @@
   .ecosystem-header,
   .ecosystem-steps { position: relative; z-index: 1; }
   .ecosystem-header { margin-bottom: 80px; max-width: 600px; }
+  .ecosystem-section .section-eyebrow-text { color: var(--gold-light); }
+  .ecosystem-section .section-eyebrow-line,
+  .ecosystem-section .section-eyebrow::after { background: var(--gold-light); }
   .ecosystem-header p {
     font-size: 1rem; line-height: 1.8; color: var(--gray-light);
     margin-top: 32px;
@@ -676,7 +685,7 @@
   .ecosystem-step-num {
     font-family: 'DM Mono', monospace;
     font-size: 0.65rem; letter-spacing: 0.18em;
-    color: var(--gold); margin-bottom: 24px; display: block;
+    color: var(--gold-light); margin-bottom: 24px; display: block;
   }
   .ecosystem-step h3 {
     font-family: 'Playfair Display', serif;
@@ -775,7 +784,7 @@
     font-weight: 500; line-height: 1.15; color: var(--white);
     max-width: 700px; margin: 0 auto 32px;
   }
-  .cta-section h2 em { font-style: italic; color: var(--gold); }
+  .cta-section h2 em { font-style: italic; color: var(--gold-light); }
   .cta-section p {
     font-size: 1rem; color: var(--gray); max-width: 480px;
     margin: 0 auto 48px; line-height: 1.7;
@@ -811,7 +820,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 16px;
   }
-  .footer-logo span { color: var(--gold); }
+  .footer-logo span { color: var(--gold-light); }
   .footer-logo img {
     display: block;
     height: 58px;
@@ -826,7 +835,7 @@
   .footer-address strong { color: var(--gray-light); }
   .footer-col h4 {
     font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 24px;
   }
   .footer-col ul { list-style: none; }
   .footer-col ul li { margin-bottom: 12px; }
@@ -938,6 +947,13 @@
       border-bottom: 0;
     }
     .ecosystem-step:nth-child(2) { padding: 32px 0; }
+
+    .ecosystem-section {
+      background-size: 100% 100%, 100% 100%, auto 460px;
+      background-position: center, center, center top;
+      background-repeat: no-repeat;
+      background-color: var(--navy);
+    }
 
     footer {
       gap: 32px;
