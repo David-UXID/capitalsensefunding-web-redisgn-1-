@@ -185,11 +185,17 @@
   }
 
   @media (max-width: 768px) {
-    .hero-eyebrow,
-    .section-eyebrow {
+    .hero-eyebrow {
       gap: 8px;
       margin-bottom: 20px;
       flex-wrap: nowrap;
+      padding-right: 0;
+    }
+
+    .section-eyebrow {
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
       padding-right: 0;
     }
 
