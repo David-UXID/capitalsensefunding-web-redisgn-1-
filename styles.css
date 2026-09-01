@@ -189,7 +189,7 @@
     .section-eyebrow {
       gap: 8px;
       margin-bottom: 20px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       padding-right: 0;
     }
 
