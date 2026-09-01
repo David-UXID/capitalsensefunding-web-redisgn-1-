@@ -195,7 +195,7 @@
     .section-eyebrow {
       gap: 8px;
       margin-bottom: 20px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       padding-right: 0;
     }
 
@@ -221,7 +221,12 @@
     }
 
     .section-eyebrow-text {
-      white-space: normal;
+      min-width: 0;
+      font-size: clamp(0.58rem, 1.8vw, 0.72rem);
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
