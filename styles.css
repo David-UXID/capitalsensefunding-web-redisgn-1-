@@ -193,9 +193,12 @@
     }
 
     .section-eyebrow {
-      gap: 8px;
+      display: inline-grid;
+      grid-template-columns: 18px minmax(0, 1fr) 18px;
+      align-items: center;
+      column-gap: 8px;
       margin-bottom: 20px;
-      flex-wrap: nowrap;
+      width: 100%;
       padding-right: 0;
     }
 
@@ -224,9 +227,7 @@
       min-width: 0;
       font-size: clamp(0.58rem, 1.8vw, 0.72rem);
       letter-spacing: 0.12em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
     }
   }
 
@@ -1074,3 +1075,33 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
   .reveal-delay-4 { transition-delay: 0.4s; }
+
+  @media (max-width: 768px) {
+    .section-eyebrow {
+      display: inline-grid;
+      grid-template-columns: 18px minmax(0, max-content) 18px;
+      align-items: center;
+      column-gap: 8px;
+      width: fit-content;
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    .section-eyebrow-line,
+    .section-eyebrow::after {
+      width: 18px;
+    }
+
+    .section-eyebrow::after {
+      position: static;
+      transform: none;
+      margin-top: 2px;
+    }
+
+    .section-eyebrow-text {
+      min-width: 0;
+      font-size: clamp(0.58rem, 1.8vw, 0.72rem);
+      letter-spacing: 0.12em;
+      white-space: normal;
+    }
+  }
