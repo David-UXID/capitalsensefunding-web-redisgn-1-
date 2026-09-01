@@ -60,18 +60,17 @@
     margin-top: 0;
   }
   .nav-tagline {
-    max-width: 320px;
     display: inline-block;
     flex-shrink: 0;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    font-size: clamp(0.62rem, 0.95vw, 0.74rem);
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gray);
+    color: var(--white);
     line-height: 1.3;
-    white-space: normal;
-    margin-top: -2px;
+    max-width: 240px;
+    white-space: nowrap;
   }
   .nav-toggle {
     display: none;
@@ -887,7 +886,7 @@
     .nav-tagline {
       display: block;
       max-width: 240px;
-      white-space: normal;
+      white-space: nowrap;
     }
     .nav-toggle { display: inline-flex; }
     .nav-links {
