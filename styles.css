@@ -662,6 +662,22 @@
   }
   .mission-strip p strong { color: var(--white); font-weight: 600; }
 
+  @media (min-width: 901px) {
+    .mission-strip {
+      min-height: 380px;
+      padding: 112px 56px;
+      background:
+        linear-gradient(90deg, rgba(61, 150, 214, 0.72) 0%, rgba(61, 150, 214, 0.54) 52%, rgba(10, 29, 54, 0.38) 100%),
+        url('images/buildyourlegacy.jpg?v=20260908') center / cover no-repeat;
+    }
+    .mission-strip h2 {
+      font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+    }
+    .mission-strip p {
+      font-size: 1.125rem;
+    }
+  }
+
   /* ── ECOSYSTEM ── */
   .ecosystem-section {
     position: relative;
