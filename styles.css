@@ -642,7 +642,7 @@
   .mission-strip {
     background:
       linear-gradient(90deg, rgba(61, 150, 214, 0.9) 0%, rgba(61, 150, 214, 0.78) 52%, rgba(10, 29, 54, 0.62) 100%),
-      url('images/buildyourlegacy.avif?v=20260908') center / cover no-repeat;
+      url('images/build.png?v=20260908') center / cover no-repeat;
     padding: 80px 56px;
     display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
   }
@@ -668,7 +668,7 @@
       padding: 112px 56px;
       background:
         linear-gradient(90deg, rgba(61, 150, 214, 0.72) 0%, rgba(61, 150, 214, 0.54) 52%, rgba(10, 29, 54, 0.38) 100%),
-        url('images/buildyourlegacy.avif?v=20260908') center / cover no-repeat;
+        url('images/build.png?v=20260908') center / cover no-repeat;
     }
     .mission-strip h2 {
       font-size: clamp(2.2rem, 3.4vw, 3.2rem);
