@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Online | Capital Sense Funding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #04111f;
+    --navy-mid: #0a1d36;
+    --navy-light: #243d57;
+    --gold: #5ab0e8;
+    --gold-deep: #1073b8;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --gray: #8a9bb0;
+    --gray-light: #d0d8e4;
+    --text-body: #4a5a6b;
+    --line: rgba(10, 29, 54, 0.12);
+    --error: #c44936;
+    --radius: 18px;
+    --shadow: 0 18px 46px rgba(4, 17, 31, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(180deg, #f8f8f6 0%, #f0f3f7 100%);
+    color: var(--navy-mid);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 { margin: 0; }
+  a { color: inherit; }
+
+  .site-header {
+    position: relative;
+    z-index: 20;
+    background: rgba(4, 17, 31, 0.94);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .brand-lockup {
+    max-width: 1280px;
+    margin: 0 auto;
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px;
+  }
+
+  .brand-lockup img {
+    display: block;
+    height: 64px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.14));
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--gold);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #5b9bd5;
+    color: #fff !important;
+    padding: 16px 32px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 999px;
+    transition: background 0.2s ease, transform 0.2s ease !important;
+  }
+
+  .nav-cta:hover {
+    background: #7fb4e6 !important;
+    transform: translateY(-1px);
+  }
+
+  .page-hero {
+    position: relative;
+    min-height: 34vh;
+    display: flex;
+    align-items: flex-end;
+    background: var(--navy);
+    overflow: hidden;
+    padding: 132px 56px 76px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(4, 17, 31, 0.88) 0%, rgba(10, 29, 54, 0.8) 42%, rgba(10, 29, 54, 0.28) 100%),
+      linear-gradient(180deg, rgba(4, 17, 31, 0.18) 0%, rgba(4, 17, 31, 0.38) 100%),
+      url('images/construction.avif') center center / cover no-repeat;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-eyebrow-line {
+    display: block;
+    width: 26px;
+    height: 1px;
+    background: #fff;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 4.2vw, 4.8rem);
+    font-weight: 500;
+    line-height: 1.05;
+    color: #bfe3ff;
+    max-width: 820px;
+    margin-bottom: 26px;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero h1 .hash {
+    color: #8ecaf7;
+    font-style: normal;
+    font-weight: 600;
+    opacity: 0.9;
+  }
+
+  .hero h1 .soft {
+    color: #d9efff;
+  }
+
+  .hero-sub {
+    max-width: 600px;
+    font-size: 1.12rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .stepper-wrap {
+    max-width: 1240px;
+    margin: 28px auto 0;
+    padding: 0 40px;
+  }
+
+  .stepper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 640px;
+  }
+
+  .step-node {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+  }
+
+  .step-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: var(--white);
+    color: var(--navy-light);
+    border: 1.5px solid rgba(36, 61, 87, 0.55);
+    transition: all 0.25s ease;
+  }
+
+  .step-node.active .step-circle,
+  .step-node.done .step-circle {
+    background: var(--navy-mid);
+    border-color: var(--navy-mid);
+    color: var(--white);
+  }
+
+  .step-node.done .step-circle {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy-mid);
+  }
+
+  .step-label {
+    font-size: 0.82rem;
+    color: var(--text-body);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .step-node.active .step-label {
+    color: var(--navy-mid);
+    font-weight: 700;
+  }
+
+  .step-track {
+    flex: 1 1 auto;
+    height: 1px;
+    background: rgba(10, 29, 54, 0.16);
+    margin: 0 18px;
+    position: relative;
+    top: -10px;
+  }
+
+  main.form-shell {
+    max-width: 1240px;
+    margin: 34px auto 90px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .form-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 42px 42px 34px;
+  }
+
+  .step-panel { display: none; }
+  .step-panel.active {
+    display: block;
+    animation: reveal 0.35s ease;
+  }
+
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 2.3vw, 2.6rem);
+    line-height: 1.2;
+    color: var(--navy-mid);
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+
+  fieldset {
+    border: 0;
+    margin: 0 0 30px;
+    padding: 0;
+  }
+
+  fieldset legend {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy-mid);
+    margin-bottom: 18px;
+    padding: 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .field.full { grid-column: 1 / -1; }
+
+  .field label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--navy-mid);
+    text-transform: uppercase;
+  }
+
+  .field label .req { color: var(--error); margin-left: 2px; }
+
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  input[type=date],
+  input[type=number],
+  select,
+  textarea {
+    width: 100%;
+    background: var(--white);
+    color: var(--navy-mid);
+    border: 1px solid rgba(10, 29, 54, 0.18);
+    border-radius: 12px;
+    padding: 13px 14px;
+    font-size: 0.98rem;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(74, 90, 107, 0.7);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--gold-deep);
+    box-shadow: 0 0 0 3px rgba(16, 115, 184, 0.14);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 104px;
+  }
+
+  .file-drop {
+    display: block;
+    border: 1.5px dashed rgba(16, 115, 184, 0.45);
+    border-radius: 16px;
+    padding: 26px 20px;
+    text-align: center;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    background: rgba(90, 176, 232, 0.04);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .file-drop:hover {
+    border-color: var(--gold-deep);
+    background: rgba(90, 176, 232, 0.08);
+  }
+
+  .file-drop strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--navy-mid);
+    font-weight: 700;
+  }
+
+  .file-drop input { display: none; }
+
+  .subsection {
+    border-top: 1px solid var(--line);
+    padding-top: 26px;
+    margin-top: 10px;
+  }
+
+  .subsection-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .subsection-head h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy-mid);
+  }
+
+  .subsection-note {
+    font-size: 0.78rem;
+    color: var(--text-body);
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 18px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .btn {
+    border: 0;
+    border-radius: 999px;
+    padding: 15px 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn:active { transform: translateY(0); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold) 100%);
+    color: var(--white);
+    box-shadow: 0 12px 22px rgba(16, 115, 184, 0.22);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(10, 29, 54, 0.2);
+    color: var(--navy-mid);
+  }
+
+  .btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+  .help {
+    position: sticky;
+    top: 128px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .help-card {
+    background: var(--navy-mid);
+    border-radius: 20px;
+    padding: 28px 24px;
+    color: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--shadow);
+  }
+
+  .help-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .help-card p {
+    margin: 0 0 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.95rem;
+  }
+
+  .help-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .help-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .help-list li:first-child { border-top: 0; }
+
+  .help-list .dot {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .help-card.alt {
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--navy-mid);
+  }
+
+  .help-card.alt h3 {
+    color: var(--navy-mid);
+  }
+
+  .help-card.alt p {
+    color: var(--text-body);
+  }
+
+  .help-phone {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    color: var(--navy-mid);
+    text-decoration: none;
+  }
+
+  footer.site {
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.72);
+    text-align: center;
+    padding: 28px 24px 36px;
+    font-size: 0.82rem;
+    line-height: 1.8;
+  }
+
+  footer.site strong { color: var(--white); }
+
+  @media (max-width: 980px) {
+    .site-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 16px;
+      padding-bottom: 18px;
+    }
+
+    .nav-links {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    main.form-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .help {
+      position: static;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .page-hero {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .stepper-wrap,
+    main.form-shell {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .form-card {
+      padding: 28px 20px 22px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" aria-label="Brand header">
+  <div class="brand-lockup">
+    <img src="images/logo-1.png" alt="Capital Sense Funding logo" onerror="this.style.display='none'">
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span>Digital Funding Request</span>
+    </div>
+    <h1>
+      <span class="hash">#</span> <span class="soft">Apply for your next</span><br>
+      <span class="hash">#</span> <span class="soft">opportunity</span>
+    </h1>
+    <p class="hero-sub">Two short steps — your business details, then ownership information. Most applicants finish in under five minutes, with no hard credit pull to see your offers.</p>
+  </div>
+</section>
+
+<div class="stepper-wrap">
+  <div class="stepper">
+    <div class="step-node active" data-step-node="1">
+      <div class="step-circle">1</div>
+      <span class="step-label">Business Information</span>
+    </div>
+    <div class="step-track"></div>
+    <div class="step-node" data-step-node="2">
+      <div class="step-circle">2</div>
+      <span class="step-label">Ownership Information</span>
+    </div>
+  </div>
+</div>
+
+<main class="form-shell">
+  <form class="form-card" id="apply-form" novalidate>
+
+    <!-- STEP 1 -->
+    <div class="step-panel active" data-step="1">
+      <span class="step-eyebrow">Step 1 of 2</span>
+      <h2 class="step-title">Business Information</h2>
+
+      <fieldset>
+        <legend>Funding Request</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="amount">Amount requested</label>
+            <input type="text" id="amount" name="amount" placeholder="$">
+          </div>
+          <div class="field">
+            <label for="use-of-funds">Use of funds</label>
+            <input type="text" id="use-of-funds" name="use_of_funds" placeholder="e.g. Equipment, payroll, expansion">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Business Details</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="dba">DBA (doing business as)<span class="req">*</span></label>
+            <input type="text" id="dba" name="dba" required>
+          </div>
+          <div class="field">
+            <label for="legal-name">Legal corporate name<span class="req">*</span></label>
+            <input type="text" id="legal-name" name="legal_name" required>
+          </div>
+          <div class="field full">
+            <label for="mailing-address">Mailing address</label>
+            <input type="text" id="mailing-address" name="mailing_address">
+          </div>
+          <div class="field">
+            <label for="state-incorp">State of incorporation<span class="req">*</span></label>
+            <select id="state-incorp" name="state_incorporation" required></select>
+          </div>
+          <div class="field">
+            <label for="ein">Federal Tax ID (EIN number)<span class="req">*</span></label>
+            <input type="text" id="ein" name="ein" required>
+          </div>
+          <div class="field">
+            <label for="biz-phone">Business phone</label>
+            <input type="tel" id="biz-phone" name="business_phone">
+          </div>
+          <div class="field">
+            <label for="biz-email">Business email</label>
+            <input type="email" id="biz-email" name="business_email">
+          </div>
+          <div class="field">
+            <label for="start-date">Business start date<span class="req">*</span></label>
+            <input type="date" id="start-date" name="business_start_date" required>
+          </div>
+          <div class="field">
+            <label for="entity-type">Entity type<span class="req">*</span></label>
+            <select id="entity-type" name="entity_type" required>
+              <option value="">Select entity type</option>
+              <option>Sole Proprietorship</option>
+              <option>LLC</option>
+              <option>Corporation</option>
+              <option>Partnership</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="products">Services / products sold</label>
+            <textarea id="products" name="products_sold"></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Business Address</legend>
+        <div class="grid">
+          <div class="field full">
+            <label for="biz-street">Street<span class="req">*</span></label>
+            <input type="text" id="biz-street" name="business_street" required>
+          </div>
+          <div class="field">
+            <label for="biz-city">City<span class="req">*</span></label>
+            <input type="text" id="biz-city" name="business_city" required>
+          </div>
+          <div class="field">
+            <label for="biz-state">State<span class="req">*</span></label>
+            <select id="biz-state" name="business_state" required></select>
+          </div>
+          <div class="field">
+            <label for="biz-zip">Zip code<span class="req">*</span></label>
+            <input type="text" id="biz-zip" name="business_zip" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Attachments</legend>
+        <label class="file-drop">
+          <strong>ID, voided check, bank statements</strong>
+          Click to upload or drag files here
+          <input type="file" name="attachments" multiple>
+        </label>
+      </fieldset>
+
+      <div class="subsection">
+        <div class="subsection-head">
+          <h3>Secondary Owner</h3>
+          <span class="subsection-note">Optional — only if ownership is shared</span>
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label for="sec-name">First and last name</label>
+            <input type="text" id="sec-name" name="secondary_name">
+          </div>
+          <div class="field">
+            <label for="sec-birthdate">Birthdate</label>
+            <input type="date" id="sec-birthdate" name="secondary_birthdate">
+          </div>
+          <div class="field">
+            <label for="sec-ownership">Ownership %</label>
+            <input type="text" id="sec-ownership" name="secondary_ownership">
+          </div>
+          <div class="field">
+            <label for="sec-ssn">SSN (Social Security Number)</label>
+            <input type="text" id="sec-ssn" name="secondary_ssn">
+          </div>
+          <div class="field">
+            <label for="sec-cell">Cell number</label>
+            <input type="tel" id="sec-cell" name="secondary_cell">
+          </div>
+          <div class="field">
+            <label for="sec-since">Ownership since</label>
+            <input type="date" id="sec-since" name="secondary_ownership_since">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <span></span>
+        <button type="button" class="btn btn-primary" data-action="next">Continue to Ownership Information</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step-panel" data-step="2">
+      <span class="step-eyebrow">Step 2 of 2</span>
+      <h2 class="step-title">Ownership Information</h2>
+
+      <fieldset>
+        <legend>Primary Owner</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="own-name">First and last name<span class="req">*</span></label>
+            <input type="text" id="own-name" name="owner_name" required>
+          </div>
+          <div class="field">
+            <label for="own-title">Title<span class="req">*</span></label>
+            <input type="text" id="own-title" name="owner_title" required>
+          </div>
+          <div class="field">
+            <label for="own-email">E-mail address<span class="req">*</span></label>
+            <input type="email" id="own-email" name="owner_email" required>
+          </div>
+          <div class="field">
+            <label for="own-cell">Cell number<span class="req">*</span></label>
+            <input type="tel" id="own-cell" name="owner_cell" required>
+          </div>
+          <div class="field">
+            <label for="own-ssn">SSN (Social Security Number)<span class="req">*</span></label>
+            <input type="text" id="own-ssn" name="owner_ssn" required>
+          </div>
+          <div class="field">
+            <label for="own-birthdate">Birthdate<span class="req">*</span></label>
+            <input type="date" id="own-birthdate" name="owner_birthdate" required>
+          </div>
+          <div class="field">
+            <label for="own-pct">Ownership %<span class="req">*</span></label>
+            <input type="text" id="own-pct" name="owner_pct" required>
+          </div>
+          <div class="field">
+            <label for="own-since">Ownership since<span class="req">*</span></label>
+            <input type="date" id="own-since" name="owner_since" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Home Address</legend>
+        <div class="grid">
+          <div class="field full">
+            <label for="home-street">Street<span class="req">*</span></label>
+            <input type="text" id="home-street" name="home_street" required>
+          </div>
+          <div class="field">
+            <label for="home-city">City<span class="req">*</span></label>
+            <input type="text" id="home-city" name="home_city" required>
+          </div>
+          <div class="field">
+            <label for="home-state">State<span class="req">*</span></label>
+            <select id="home-state" name="home_state" required></select>
+          </div>
+          <div class="field">
+            <label for="home-zip">Zip code<span class="req">*</span></label>
+            <input type="text" id="home-zip" name="home_zip" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" data-action="back">Back to Business Information</button>
+        <button type="submit" class="btn btn-primary">Submit Application</button>
+      </div>
+    </div>
+
+  </form>
+
+  <aside class="help">
+    <div class="help-card">
+      <h3>Why we ask</h3>
+      <p>These details let our team match you to the right facility — line of credit, term loan, or MCA — and move at the speed your business needs.</p>
+      <ul class="help-list">
+        <li><span class="dot">—</span> No hard credit pull to see your offers</li>
+        <li><span class="dot">—</span> Funded in as little as 24 hours</li>
+        <li><span class="dot">—</span> 100% digital, 24/7 account access</li>
+      </ul>
+    </div>
+    <div class="help-card alt">
+      <h3>Questions along the way?</h3>
+      <p>Our Philadelphia team is on hand to walk through the application with you.</p>
+      <a class="help-phone" href="tel:2675754786">(267) 575-4786</a>
+    </div>
+  </aside>
+</main>
+
+<footer class="site">
+  <strong>Capital Sense Funding</strong> · 230 S. Broad Street, Suite 805, Philadelphia, PA 19102 · (267) 575-4786<br>
+  © 2026 Capital Sense Funding. All rights reserved.
+</footer>
+
+<script>
+  const states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District Of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
+
+  document.querySelectorAll('select[name="state_incorporation"], select[name="business_state"], select[name="home_state"]').forEach(sel => {
+    const placeholder = document.createElement('option');
+    placeholder.value = "";
+    placeholder.textContent = "Select state";
+    sel.appendChild(placeholder);
+    states.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = s;
+      sel.appendChild(opt);
+    });
+    sel.value = "";
+  });
+
+  const panels = document.querySelectorAll('.step-panel');
+  const nodes = document.querySelectorAll('[data-step-node]');
+
+  function goToStep(step){
+    panels.forEach(p => p.classList.toggle('active', p.dataset.step === String(step)));
+    nodes.forEach(n => {
+      const s = Number(n.dataset.stepNode);
+      n.classList.toggle('active', s === step);
+      n.classList.toggle('done', s < step);
+    });
+    window.scrollTo({top: document.querySelector('.stepper-wrap').offsetTop - 20, behavior:'smooth'});
+  }
+
+  document.querySelector('[data-action="next"]').addEventListener('click', () => {
+    const panel1 = document.querySelector('.step-panel[data-step="1"]');
+    const required = panel1.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(f => { if(!f.value){ valid = false; f.style.borderColor = 'var(--error)'; } else { f.style.borderColor = ''; } });
+    if(!valid){ return; }
+    goToStep(2);
+  });
+
+  document.querySelector('[data-action="back"]').addEventListener('click', () => goToStep(1));
+
+  document.getElementById('apply-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const panel2 = document.querySelector('.step-panel[data-step="2"]');
+    const required = panel2.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(f => { if(!f.value){ valid = false; f.style.borderColor = 'var(--error)'; } else { f.style.borderColor = ''; } });
+    if(!valid){ return; }
+    alert('This is a design preview — connect this form to your processing endpoint to accept live submissions.');
+  });
+</script>
+
+</body>
+</html>
