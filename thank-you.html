@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Submitted | Capital Sense Funding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #04111f;
+    --navy-mid: #0a1d36;
+    --navy-light: #243d57;
+    --gold: #5ab0e7;
+    --gold-deep: #1073b8;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --gray: #8a9bb0;
+    --gray-light: #d0d8e4;
+    --text-body: #4a5a6b;
+    --success: #1f9d63;
+    --shadow: 0 18px 46px rgba(4, 17, 31, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(180deg, #f8f8f6 0%, #f0f3f7 100%);
+    color: var(--navy-mid);
+  }
+
+  h1, h2, h3 { margin: 0; }
+  a { color: inherit; }
+
+  .site-header {
+    position: relative;
+    z-index: 20;
+    background: rgba(4, 17, 31, 0.94);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .brand-lockup {
+    max-width: 1280px;
+    margin: 0 auto;
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px;
+  }
+
+  .brand-lockup img {
+    display: block;
+    height: 64px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.14));
+  }
+
+  .confirm-shell {
+    min-height: calc(100vh - 112px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+  }
+
+  .confirm-card {
+    max-width: 620px;
+    width: 100%;
+    text-align: center;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 64px 48px;
+  }
+
+  .check-circle {
+    width: 108px;
+    height: 108px;
+    margin: 0 auto 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--success), #17b371);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 16px 32px rgba(31, 157, 99, 0.28);
+    animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .check-circle svg {
+    width: 54px;
+    height: 54px;
+  }
+
+  .check-circle svg path {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: draw-check 0.4s ease-out 0.35s forwards;
+  }
+
+  @keyframes pop-in {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes draw-check {
+    to { stroke-dashoffset: 0; }
+  }
+
+  .confirm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+
+  .confirm-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    color: var(--navy-mid);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .confirm-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-body);
+    max-width: 460px;
+    margin: 0 auto 36px;
+  }
+
+  .confirm-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #5b9bd5;
+    color: #fff;
+    padding: 16px 32px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 999px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-home:hover {
+    background: #7fb4e6;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--navy-mid);
+    border: 1px solid var(--gray-light);
+    padding: 15px 32px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 999px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold-deep);
+    color: var(--gold-deep);
+  }
+
+  @media (max-width: 560px) {
+    .confirm-card { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" aria-label="Brand header">
+  <div class="brand-lockup">
+    <img src="images/Test1.png" alt="Capital Sense Funding logo" loading="eager">
+  </div>
+</header>
+
+<main class="confirm-shell">
+  <div class="confirm-card">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24"><path d="M4 12.5l5 5 11-11"></path></svg>
+    </div>
+    <span class="confirm-eyebrow">Application Received</span>
+    <h1>Congratulations — your capital is on its way!</h1>
+    <p>Thank you for submitting your application. A member of our funding team will review your details and reach out shortly with your available offers.</p>
+    <div class="confirm-actions">
+      <a class="btn-home" href="index.html">Back to Home</a>
+      <a class="btn-outline" href="short-term-loan.html">Explore Loan Options</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

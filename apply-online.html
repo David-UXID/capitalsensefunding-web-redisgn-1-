@@ -991,6 +991,9 @@
     const subject = encodeURIComponent('New Capital Sense Funding application');
     const body = encodeURIComponent(lines.join('\n'));
     window.location.href = `mailto:info@capitalsensefunding.com?subject=${subject}&body=${body}`;
+
+    // give the email client a moment to open before navigating away
+    setTimeout(() => { window.location.href = 'thank-you.html'; }, 400);
   });
 </script>
 
