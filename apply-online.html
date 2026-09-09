@@ -11,7 +11,7 @@
     --navy: #04111f;
     --navy-mid: #0a1d36;
     --navy-light: #243d57;
-    --gold: #5ab0e8;
+    --gold: #5ab0e7;
     --gold-deep: #1073b8;
     --cream: #f5f0e8;
     --white: #ffffff;
@@ -179,14 +179,14 @@
   }
 
   .hero h1 .hash {
-    color: #8ecaf7;
+    color: #bfe3ff;
     font-style: normal;
     font-weight: 600;
-    opacity: 0.9;
+    opacity: 0.95;
   }
 
   .hero h1 .soft {
-    color: #d9efff;
+    color: #eaf7ff;
   }
 
   .hero-sub {
@@ -638,7 +638,7 @@
 
 <header class="site-header" aria-label="Brand header">
   <div class="brand-lockup">
-    <img src="images/logo-1.png" alt="Capital Sense Funding logo" onerror="this.style.display='none'">
+    <img src="images/Test1.png" alt="Capital Sense Funding logo" loading="eager">
   </div>
 </header>
 
@@ -769,7 +769,7 @@
       </fieldset>
 
       <fieldset>
-        <legend>Attachments</legend>
+        <legend>Attachments (optional)</legend>
         <label class="file-drop">
           <strong>ID, voided check, bank statements</strong>
           Click to upload or drag files here
@@ -955,12 +955,42 @@
 
   document.getElementById('apply-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    const panel2 = document.querySelector('.step-panel[data-step="2"]');
-    const required = panel2.querySelectorAll('[required]');
+    const form = e.currentTarget;
+    const required = form.querySelectorAll('[required]');
     let valid = true;
-    required.forEach(f => { if(!f.value){ valid = false; f.style.borderColor = 'var(--error)'; } else { f.style.borderColor = ''; } });
-    if(!valid){ return; }
-    alert('This is a design preview — connect this form to your processing endpoint to accept live submissions.');
+
+    required.forEach(field => {
+      const fieldValid = field.checkValidity();
+      field.style.borderColor = fieldValid ? '' : 'var(--error)';
+      if (!fieldValid) valid = false;
+    });
+
+    if (!valid) {
+      form.querySelector(':invalid').focus();
+      return;
+    }
+
+    const labels = new Map(
+      Array.from(form.querySelectorAll('label[for]')).map(label => [label.htmlFor, label.textContent.replace('*', '').trim()])
+    );
+    const lines = ['New Capital Sense Funding application', ''];
+
+    Array.from(form.elements).forEach(field => {
+      if (!field.name) return;
+
+      let value;
+      if (field.type === 'file') {
+        value = Array.from(field.files).map(file => file.name).join(', ');
+      } else {
+        value = field.value.trim();
+      }
+
+      lines.push(`${labels.get(field.id) || field.name}: ${value || 'Not provided'}`);
+    });
+
+    const subject = encodeURIComponent('New Capital Sense Funding application');
+    const body = encodeURIComponent(lines.join('\n'));
+    window.location.href = `mailto:info@capitalsensefunding.com?subject=${subject}&body=${body}`;
   });
 </script>
 
