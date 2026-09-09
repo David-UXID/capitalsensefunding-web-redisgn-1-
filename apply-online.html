@@ -973,7 +973,7 @@
     const labels = new Map(
       Array.from(form.querySelectorAll('label[for]')).map(label => [label.htmlFor, label.textContent.replace('*', '').trim()])
     );
-    const lines = ['New Capital Sense Funding application', ''];
+    const lines = ['Capital Sense Funding application'];
 
     Array.from(form.elements).forEach(field => {
       if (!field.name) return;
@@ -985,12 +985,13 @@
         value = field.value.trim();
       }
 
-      lines.push(`${labels.get(field.id) || field.name}: ${value || 'Not provided'}`);
+      lines.push(`${labels.get(field.id) || field.name}=${value || 'Not provided'}`);
     });
 
+    const recipients = 'info@capitalsensefunding.com,capitalsense230@gmail.com,davidestulin@gmail.com';
     const subject = encodeURIComponent('New Capital Sense Funding application');
     const body = encodeURIComponent(lines.join('\n'));
-    window.location.href = `mailto:info@capitalsensefunding.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${recipients}?subject=${subject}&body=${body}`;
 
     // give the email client a moment to open before navigating away
     setTimeout(() => { window.location.href = 'thank-you.html'; }, 400);
